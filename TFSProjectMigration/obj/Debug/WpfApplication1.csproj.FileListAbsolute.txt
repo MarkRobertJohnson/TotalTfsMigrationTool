@@ -1,0 +1,15 @@
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\WpfApplication1.exe.config
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\WpfApplication1.csprojResolveAssemblyReference.cache
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\MainWindow.baml
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\MainWindow.g.cs
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\App.g.cs
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\WpfApplication1_MarkupCompile.cache
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\WpfApplication1.g.resources
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\WpfApplication1.Properties.Resources.resources
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\WpfApplication1.exe
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\WpfApplication1.pdb
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.WITDataStore.dll
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\WpfApplication1.exe
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\WpfApplication1.pdb

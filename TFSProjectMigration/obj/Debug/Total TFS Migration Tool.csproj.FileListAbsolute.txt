@@ -1,0 +1,51 @@
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.config
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Total TFS Migration Tool.exe.config
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Total TFS Migration Tool.exe.manifest
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Total TFS Migration Tool.application
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Total TFS Migration Tool.exe
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Total TFS Migration Tool.pdb
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.dll
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.xml
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.WITDataStore.dll
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\Total TFS Migration Tool.csprojResolveAssemblyReference.cache
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TestPlanViewUI.baml
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.baml
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TestPlanViewUI.g.cs
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.g.cs
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\App.g.cs
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\Total TFS Migration Tool_MarkupCompile.cache
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\Total TFS Migration Tool.g.resources
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.Properties.Resources.resources
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\Total TFS Migration Tool.csproj.GenerateResource.Cache
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\Total TFS Migration Tool.exe.manifest
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\Total TFS Migration Tool.application
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\Total TFS Migration Tool.exe
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\Total TFS Migration Tool.pdb
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\Total TFS Migration Tool.exe.config
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\Total TFS Migration Tool.exe
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\Total TFS Migration Tool.pdb
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\log4net.config
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\Total TFS Migration Tool.exe.manifest
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\Total TFS Migration Tool.application
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\Total TFS Migration Tool.exe
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\Total TFS Migration Tool.pdb
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\log4net.dll
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\log4net.xml
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\bin\Debug\Microsoft.WITDataStore.dll
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\Total TFS Migration Tool.csprojResolveAssemblyReference.cache
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\TestPlanViewUI.baml
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.baml
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\TestPlanViewUI.g.cs
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.g.cs
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\App.g.cs
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\Total TFS Migration Tool_MarkupCompile.cache
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\Total TFS Migration Tool.g.resources
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\TFSProjectMigration.Properties.Resources.resources
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\Total TFS Migration Tool.csproj.GenerateResource.Cache
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\Total TFS Migration Tool.exe.manifest
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\WpfApplication1\obj\Debug\Total TFS Migration Tool.application
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\TFSProjectMigration\bin\Debug\Total TFS Migration Tool.exe.config
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\TFSProjectMigration\obj\Debug\Total TFS Migration Tool.exe
+D:\GEVEO MIGRATION\Total TFS Migration Tool\GENERIC DEV\TFSProjectMigration\obj\Debug\Total TFS Migration Tool.pdb

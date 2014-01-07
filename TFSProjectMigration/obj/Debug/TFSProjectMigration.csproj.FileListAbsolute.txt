@@ -1,0 +1,82 @@
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.exe.config
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.config
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.exe
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.pdb
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.dll
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.xml
+D:\Demo projects\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.WITDataStore.dll
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\MainWindow.baml
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\MainWindow.g.cs
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\App.g.cs
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration_MarkupCompile.cache
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.g.resources
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.Properties.Resources.resources
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.csproj.GenerateResource.Cache
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.exe
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.pdb
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigrationUI.baml
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigrationUI.g.cs
+D:\Demo projects\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.csprojResolveAssemblyReference.cache
+D:\New\New\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.config
+D:\New\New\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.exe.config
+D:\New\New\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.exe
+D:\New\New\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.pdb
+D:\New\New\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.dll
+D:\New\New\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+D:\New\New\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.xml
+D:\New\New\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.WITDataStore.dll
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.baml
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.g.cs
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\App.g.cs
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration_MarkupCompile.cache
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.g.resources
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.Properties.Resources.resources
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.csproj.GenerateResource.Cache
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.exe
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.pdb
+D:\New\New\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.csprojResolveAssemblyReference.cache
+D:\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.exe.config
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.exe
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.pdb
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.csprojResolveAssemblyReference.cache
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.baml
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.g.cs
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\App.g.cs
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration_MarkupCompile.cache
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.g.resources
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.Properties.Resources.resources
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.csproj.GenerateResource.Cache
+D:\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.config
+D:\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.exe
+D:\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.pdb
+D:\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.dll
+D:\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+D:\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.xml
+D:\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.WITDataStore.dll
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TestPlanViewUI.baml
+D:\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TestPlanViewUI.g.cs
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.config
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.exe.config
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.exe
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.pdb
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.dll
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\log4net.xml
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\Microsoft.WITDataStore.dll
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TestPlanViewUI.baml
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.baml
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TestPlanViewUI.g.cs
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSWorkItemMigrationUI.g.cs
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\App.g.cs
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration_MarkupCompile.cache
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.g.resources
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.Properties.Resources.resources
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.csproj.GenerateResource.Cache
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.exe
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.pdb
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.exe.manifest
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\bin\Debug\TFSProjectMigration.application
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.csprojResolveAssemblyReference.cache
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.exe.manifest
+D:\TFS Migration Tool\Generic\TFSProjectMigration\WpfApplication1\obj\Debug\TFSProjectMigration.application
