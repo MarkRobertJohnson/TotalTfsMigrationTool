@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Microsoft.TeamFoundation;
 using Microsoft.TeamFoundation.Client;
 using Microsoft.TeamFoundation.WorkItemTracking.Client;
@@ -81,7 +82,8 @@ namespace TFSProjectMigration
                 this.sourceProject = sourceStore.Projects[tpp.SelectedProjects[0].Name];
                 SourceProjectText.Text = string.Format("{0}/{1}", sourceTFS.Uri.ToString(), sourceProject.Name);
                 readSource = new WorkItemRead(sourceTFS, sourceProject);
-	            var items = readSource.GetWorkItems(sourceProject.Name, "RAPIDGate Agile 5\\DevOps");
+	            PopulateWorkItemFilterTab();
+
                 if ((string)ConnectionStatusLabel.Content == "Select a Source project")
                 {
                     ConnectionStatusLabel.Content = "";
@@ -168,26 +170,41 @@ namespace TFSProjectMigration
             }));
 
 			//WorkItemCollection source =readSource.GetWorkItems(sourceProject.Name).Cast<WorkItem>().Where(x => x.IterationPath.Contains("DevOps")));
-            WorkItemCollection source = readSource.GetWorkItems(sourceProject.Name, IsNotIncludeClosed, IsNotIncludeRemoved); //Get Workitems from source tfs 
+	        IEnumerable<string> iterationPaths = null;
+	        WorkItemIterationFilter.Dispatcher.Invoke((Action) (() =>
+	        {
+		        iterationPaths = WorkItemIterationFilter.SelectedItems.Cast<string>();
+	        }
+	                                                           ));
+	        
+            WorkItemCollection source = readSource.GetWorkItems(sourceProject.Name, IsNotIncludeClosed, IsNotIncludeRemoved, iterationPaths); //Get Workitems from source tfs 
             XmlNode[] iterations = readSource.PopulateIterations(); //Get Iterations and Areas from source tfs 
 
-            StatusViwer.Dispatcher.BeginInvoke(new Action(delegate()
+
+			//NOTE: Only create areas and iterations that are present in the set of included work items
+	        var includedIterations = source.Cast<WorkItem>().Select(x => x.IterationPath).Distinct();
+			var includedAreas = source.Cast<WorkItem>().Select(x => x.AreaPath).Distinct();
+	        
+			var includedAreasNode = GetElementsWithAttributeValue(iterations[0], includedAreas, attributeCanonicalizationFunction:CanonicolizeAreaPath);
+			var includedIterationsNode = GetElementsWithAttributeValue(iterations[1], includedIterations, attributeCanonicalizationFunction: CanonicolizeIterationPath);
+
+	        StatusViwer.Dispatcher.BeginInvoke(new Action(delegate()
             {
                 StatusViwer.Content = "Generating Areas...";
             }));
-            writeTarget.GenerateAreas(iterations[0], sourceProject.Name); //Copy Areas
+			writeTarget.GenerateAreas(includedAreasNode, sourceProject.Name); //Copy Areas
 
             StatusViwer.Dispatcher.BeginInvoke(new Action(delegate()
             {
                 StatusViwer.Content = StatusViwer.Content + "\nGenerating Iterations...";
             }));
-            writeTarget.GenerateIterations(iterations[1], sourceProject.Name); //Copy Iterations
+			writeTarget.GenerateIterations(includedIterationsNode, sourceProject.Name); //Copy Iterations
 
             StatusViwer.Dispatcher.BeginInvoke(new Action(delegate()
             {
-                StatusViwer.Content = StatusViwer.Content + "\nCopying Team Queries...";
+           //     StatusViwer.Content = StatusViwer.Content + "\nCopying Team Queries...";
             }));
-            writeTarget.SetTeamQueries(readSource.queryCol, sourceProject.Name); //Copy Queries
+          //  writeTarget.SetTeamQueries(readSource.queryCol, sourceProject.Name); //Copy Queries
 
             StatusViwer.Dispatcher.BeginInvoke(new Action(delegate()
             {
@@ -199,8 +216,8 @@ namespace TFSProjectMigration
             {
                 StatusViwer.Content = StatusViwer.Content + "\nCopying Test Plans...";
             }));
-            TestPlanMigration tcm = new TestPlanMigration(sourceTFS, destinationTFS, sourceProject.Name, destinationProject.Name, writeTarget.itemMap, StatusBar);
-            tcm.CopyTestPlans(); //Copy Test Plans
+          //  TestPlanMigration tcm = new TestPlanMigration(sourceTFS, destinationTFS, sourceProject.Name, destinationProject.Name, writeTarget.itemMap, StatusBar);
+           // tcm.CopyTestPlans(); //Copy Test Plans
 
             MigratingLabel.Dispatcher.BeginInvoke(new Action(delegate()
             {
@@ -222,7 +239,37 @@ namespace TFSProjectMigration
             logger.Info("--------------------------------Migration END----------------------------------------------");
         }
 
-        private void MigrationButton_Click(object sender, RoutedEventArgs e)
+	    private XmlNode GetElementsWithAttributeValue(XmlNode node, IEnumerable<string> allowedAttributeValues, string nodeName="Node", string attributeName="Path", Func<string,string> attributeCanonicalizationFunction = null )
+	    {
+
+			if (attributeCanonicalizationFunction == null)
+			{
+				attributeCanonicalizationFunction = s => s;
+			}
+			var nodeXElement = XElement.Parse(node.OuterXml);
+		    var iterationsToCreate = nodeXElement
+			    .Descendants(nodeName)
+			    .Where(x => allowedAttributeValues.Contains(attributeCanonicalizationFunction.Invoke(x.Attribute(attributeName).Value)));
+			
+		    var allIterationsToCreate = iterationsToCreate.Select(x =>
+		    {
+			    var xd = new XmlDocument();
+				//NOTE:Should retain the root node
+				if (node.FirstChild.Name != nodeName)
+				{
+					xd.LoadXml(string.Format("<{0}>{1}</{0}>",node.FirstChild.Name,x.ToString()));
+				}
+				else
+				{
+					xd.LoadXml(x.ToString());
+				}
+			    return xd as XmlNode;
+		    });
+
+		    return allIterationsToCreate.FirstOrDefault();
+	    }
+
+	    private void MigrationButton_Click(object sender, RoutedEventArgs e)
         {
             StartTab.IsEnabled = true;
             StartTab.IsSelected = true;
@@ -366,8 +413,8 @@ namespace TFSProjectMigration
 
         private void NextButtonMapping_Click(object sender, RoutedEventArgs e)
         {
-            StartTab.IsEnabled = true;
-            StartTab.IsSelected = true;
+			WorkItemFilterTab.IsEnabled = true;
+			WorkItemFilterTab.IsSelected = true;
         }
 
         private void FieldTypes2ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -441,5 +488,33 @@ namespace TFSProjectMigration
             System.Diagnostics.Process.Start(@"Log\Log-File");
         }
 
+		private void PopulateWorkItemFilterTab()
+		{
+			XmlNode[] areasAndIterations = readSource.PopulateIterations(); //Get Iterations and Areas from source tfs 
+			var a = areasAndIterations[1].SelectNodes("//Node");
+			var iterationPaths = a.Cast<XmlNode>().Select(x => CanonicolizeIterationPath(x.Attributes["Path"].Value));
+
+			WorkItemIterationFilter.ItemsSource = iterationPaths;
+
+			WorkItemIterationFilter.SelectAll();
+			WorkItemIterationFilter.UpdateLayout();
+		}
+
+		private string CanonicolizeIterationPath(string p)
+		{
+			return p.Trim(new[] {'\\'}).Replace("\\Iteration", "");
+		}
+
+		private string CanonicolizeAreaPath(string p)
+		{
+			return p.Trim(new[] { '\\' }).Replace("\\Area", "");
+		}
+
+
+	    private void NextButtonWorkItemFilter_OnClick(object sender, RoutedEventArgs e)
+	    {
+			StartTab.IsEnabled = true;
+			StartTab.IsSelected = true;
+	    }
     }
 }

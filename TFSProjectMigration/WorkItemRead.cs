@@ -48,54 +48,81 @@ namespace TFSProjectMigration
             return workItemCollection;
         }
 
-		public WorkItemCollection GetWorkItems(string project, string iterationPath)
+		public WorkItemCollection GetWorkItems(string project, IEnumerable<string> iterationPaths)
 		{
+			var iterationClause = string.Empty;
+			if (iterationPaths.Any())
+			{
+
+				var iterationClauses = iterationPaths.Select(path => string.Format("AND [Iteration Path] Under '{0}'", path)).ToArray();
+				iterationClause = string.Join("\n", iterationClauses);
+
+
+			}
 	
-			WorkItemCollection workItemCollection = store.Query(" SELECT * " +
+			var workItemCollection = store.Query(" SELECT * " +
 																 " FROM WorkItems " +
 																 " WHERE [System.TeamProject] = '" + project +
 																 "' AND [System.State] <> 'Closed' " + 
-																 " AND [Iteration Path] Under '" + iterationPath+ "'" +
+																 " AND [Iteration Path] Under '" + iterationPaths+ "'" +
 																 " ORDER BY [System.Id]");
 			SaveAttachments(workItemCollection);
 			return workItemCollection;
 		}
 
 
-        public WorkItemCollection GetWorkItems(string project, bool IsNotIncludeClosed, bool IsNotIncludeRemoved)
+		public WorkItemCollection GetWorkItems(string project, bool isNotIncludeClosed, bool isNotIncludeRemoved, IEnumerable<string> iterationPaths = null)
         {
+			var iterationClause = string.Empty;
+			if (iterationPaths.Any())
+			{
+
+				var iterationClauses = iterationPaths.Select(path => string.Format(" [Iteration Path] Under '{0}'", path)).ToArray();
+				iterationClause = string.Join("\n OR", iterationClauses);
+				iterationClause = string.Format(" AND ({0}) ", iterationClause);
+
+			}
+
             String query = "";
-            if (IsNotIncludeClosed && IsNotIncludeRemoved)
+            if (isNotIncludeClosed && isNotIncludeRemoved)
             {
                 query = String.Format(" SELECT * " +
                                                     " FROM WorkItems " +
                                                     " WHERE [System.TeamProject] = '" + project +
-                                                    "'AND [System.State] <> 'Closed' AND [System.State] <> 'Removed' ORDER BY [System.Id]");
+                                                    "' AND [System.State] <> 'Closed' AND [System.State] <> 'Removed'" +
+													iterationClause +
+													" ORDER BY [System.Id]");
             }
 
-            else if (IsNotIncludeRemoved)
+            else if (isNotIncludeRemoved)
             {
                 query = String.Format(" SELECT * " +
                                                    " FROM WorkItems " +
                                                    " WHERE [System.TeamProject] = '" + project +
-                                                   "'AND [System.State] <> 'Removed' ORDER BY [System.Id]");
+                                                   "' AND [System.State] <> 'Removed'"+
+												   iterationClause +
+												   " ORDER BY [System.Id]");
             }
-            else if (IsNotIncludeClosed)
+            else if (isNotIncludeClosed)
             {
                 query = String.Format(" SELECT * " +
                                                    " FROM WorkItems " +
                                                    " WHERE [System.TeamProject] = '" + project +
-                                                   "'AND [System.State] <> 'Closed'  ORDER BY [System.Id]");
+                                                   "' AND [System.State] <> 'Closed'  "+
+												   iterationClause +
+												   "ORDER BY [System.Id]");
             }
             else
             {
                 query = String.Format(" SELECT * " +
                                                    " FROM WorkItems " +
                                                    " WHERE [System.TeamProject] = '" + project +
-                                                   "' ORDER BY [System.Id]");
+                                                   "' "+
+												   iterationClause +
+												   "ORDER BY [System.Id]");
             }
             System.Diagnostics.Debug.WriteLine(query);
-            WorkItemCollection workItemCollection = store.Query(query);
+            var workItemCollection = store.Query(query);
             SaveAttachments(workItemCollection);
             return workItemCollection;
         }

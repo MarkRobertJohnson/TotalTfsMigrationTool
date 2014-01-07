@@ -3,6 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="TFSWorkItemMigrationUI.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+		<Style TargetType="HeaderedContentControl">
+			<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="HeaderedContentControl">
+						<DockPanel>
+							<ContentPresenter DockPanel.Dock="Top" ContentSource="Header" />
+							<ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+						</DockPanel>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Application.Resources>
 </Application>

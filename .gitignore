@@ -1,0 +1,53 @@
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+*.baml
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+**/obj
+**/bin
+**/bin/**
+TFSProjectMigration/bin/Release/Log/Log-File
+TFSProjectMigration/bin/Release/Total TFS Migration Tool.application
+TFSProjectMigration/bin/Release/Total TFS Migration Tool.exe
+TFSProjectMigration/bin/Release/Total TFS Migration Tool.exe.manifest
+TFSProjectMigration/bin/Release/Total TFS Migration Tool.pdb
+TFSProjectMigration/bin/Release/Total TFS Migration Tool.vshost.application
+TFSProjectMigration/bin/Release/Total TFS Migration Tool.vshost.exe.manifest
+TFSProjectMigration/obj/Release/App.g.cs
+TFSProjectMigration/obj/Release/App.g.i.cs
+TFSProjectMigration/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+TFSProjectMigration/obj/Release/TFSWorkItemMigrationUI.baml
+TFSProjectMigration/obj/Release/TFSWorkItemMigrationUI.g.cs
+TFSProjectMigration/obj/Release/TFSWorkItemMigrationUI.g.i.cs
+TFSProjectMigration/obj/Release/Total TFS Migration Tool.application
+TFSProjectMigration/obj/Release/Total TFS Migration Tool.csproj.FileListAbsolute.txt
+TFSProjectMigration/obj/Release/Total TFS Migration Tool.csprojResolveAssemblyReference.cache
+TFSProjectMigration/obj/Release/Total TFS Migration Tool.exe
+TFSProjectMigration/obj/Release/Total TFS Migration Tool.exe.manifest
+TFSProjectMigration/obj/Release/Total TFS Migration Tool.g.resources
+TFSProjectMigration/obj/Release/Total TFS Migration Tool.pdb
+TFSProjectMigration/obj/Release/Total TFS Migration Tool_MarkupCompile.cache
+TFSProjectMigration/obj/Release/Total TFS Migration Tool_MarkupCompile.i.cache

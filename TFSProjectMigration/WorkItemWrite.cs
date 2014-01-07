@@ -173,7 +173,11 @@ namespace TFSProjectMigration
 
                 WorkItem newWorkItem = null;
                 Hashtable fieldMap = ListToTable((List<object>)fieldMapAll[workItem.Type.Name]);
-                if (workItem.Type.Name == "User Story")
+				if (workItemTypes.Contains(workItem.Type.Name))
+                {
+                    newWorkItem = new WorkItem(workItemTypes[workItem.Type.Name]);
+                }
+                else if (workItem.Type.Name == "User Story")
                 {
                     newWorkItem = new WorkItem(workItemTypes["Product Backlog Item"]);
                 }
@@ -181,10 +185,7 @@ namespace TFSProjectMigration
                 {
                     newWorkItem = new WorkItem(workItemTypes["Impediment"]);
                 }
-                else if (workItemTypes.Contains(workItem.Type.Name))
-                {
-                    newWorkItem = new WorkItem(workItemTypes[workItem.Type.Name]);
-                }
+
                 else
                 {
                     logger.Info(String.Format("Work Item Type {0} does not exist in target TFS", workItem.Type.Name));
@@ -218,7 +219,7 @@ namespace TFSProjectMigration
                     }
                     //Add values to mapped fields
                     else if (fieldMap.ContainsKey(field.Name))
-                    {
+                    {	
                         newWorkItem.Fields[(string)fieldMap[field.Name]].Value = field.Value;
                     }
                 }
@@ -406,15 +407,47 @@ namespace TFSProjectMigration
                     {
                         css.CreateNode(Node.Attributes["Name"].Value, pathRoot.Uri);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+						logger.Error(string.Format("{0}", pathRoot.Uri), ex);
                         //node already exists
-                        continue;
+                     //   continue;
                     }
+
+					if (Node.FirstChild != null)
+					{
+						string nodePath = rootNodePath + "\\" + Node.Attributes["Name"].Value;
+						GenerateSubIterations(Node, nodePath, css);
+					}
                 }
             }
             RefreshCache();
         }
+
+		private void GenerateSubIterations(XmlNode tree, string nodePath, ICommonStructureService css)
+		{
+			var path = css.GetNodeFromPath(nodePath);
+			int nodeCount = tree.FirstChild.ChildNodes.Count;
+			for (int i = 0; i < nodeCount; i++)
+			{
+				XmlNode Node = tree.ChildNodes[0].ChildNodes[i];
+				try
+				{
+					css.CreateNode(Node.Attributes["Name"].Value, path.Uri);
+				}
+				catch (Exception ex)
+				{
+					logger.Error(string.Format("{0}", path.Uri), ex);
+					//node already exists
+				//	continue;
+				}
+				if (Node.FirstChild != null)
+				{
+					string newPath = nodePath + "\\" + Node.Attributes["Name"].Value;
+					GenerateSubIterations(Node, newPath, css);
+				}
+			}
+		}
 
         public void GenerateAreas(XmlNode tree, string sourceProjectName)
         {
@@ -432,8 +465,9 @@ namespace TFSProjectMigration
                     {
                         css.CreateNode(Node.Attributes["Name"].Value, pathRoot.Uri);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+						logger.Error(string.Format("{0}", pathRoot.Uri), ex);
                         //node already exists
                         continue;
                     }
@@ -460,6 +494,7 @@ namespace TFSProjectMigration
                 }
                 catch (Exception ex)
                 {
+					logger.Error(string.Format("{0}", path.Uri), ex);
                     //node already exists
                     continue;
                 }
@@ -531,7 +566,11 @@ namespace TFSProjectMigration
             foreach (WorkItemType workItemTypeSource in workItemTypesSource)
             {
                 WorkItemType workItemTypeTarget = null;
-                if (workItemTypeSource.Name == "User Story")
+				if (workItemTypes.Contains(workItemTypeSource.Name))
+				{
+					workItemTypeTarget = workItemTypes[workItemTypeSource.Name];
+				}
+                else if (workItemTypeSource.Name == "User Story")
                 {
                     workItemTypeTarget = workItemTypes["Product Backlog Item"];
                 }

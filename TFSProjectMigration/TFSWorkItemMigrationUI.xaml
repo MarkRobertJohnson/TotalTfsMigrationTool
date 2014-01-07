@@ -226,7 +226,45 @@
                     </Button>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="StartTab" Margin="-2,-4,0,4" Header="Start" Height="21" VerticalAlignment="Bottom" MinHeight="100" FontStretch="UltraExpanded" IsEnabled="False" BorderBrush="#FFABD3FD" Foreground="#FF23578D">
+			<TabItem x:Name="WorkItemFilterTab" Margin="-2,-4,0,4" Header="Work Item Filter" Height="21" 
+					 VerticalAlignment="Bottom" MinHeight="100" 
+					 FontStretch="UltraExpanded" IsEnabled="False" BorderBrush="#FFABD3FD" Foreground="#FF23578D">
+				<TabItem.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFAED3F9" Offset="0"/>
+						<GradientStop Color="#FF729FCF" Offset="1"/>
+						<GradientStop Color="#FF6E9CCD" Offset="1"/>
+						<GradientStop Color="#FF7EBCFB" Offset="1"/>
+						<GradientStop Color="#FFADD2F8" Offset="0.007"/>
+						<GradientStop Color="#FF8BB5E0" Offset="0.65"/>
+						<GradientStop Color="#FFBBDCFD" Offset="0.215"/>
+					</LinearGradientBrush>
+				</TabItem.Background>
+				<Grid Background="#FFFDFDFD">
+					<Grid.RowDefinitions>
+						<RowDefinition />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<HeaderedContentControl Header="Only include items under the following iterations:">
+						<ListBox Name="WorkItemIterationFilter" VerticalAlignment="Stretch" SelectionMode="Extended"></ListBox>
+					</HeaderedContentControl>
+					
+					<Button Grid.Row="1" x:Name="NextButtonWorkItemFilter" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Top" 
+							Width="97" Height="29" Click="NextButtonWorkItemFilter_OnClick">
+						<Button.Background>
+							<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+								<GradientStop Color="#FFF3F3F3" Offset="0"/>
+								<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+								<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+								<GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}" Offset="1"/>
+							</LinearGradientBrush>
+						</Button.Background>
+					</Button>
+				</Grid>
+			</TabItem>
+            <TabItem x:Name="StartTab" Margin="-2,-4,0,4" Header="Start" Height="21" 
+					 VerticalAlignment="Bottom" MinHeight="100" 
+					 FontStretch="UltraExpanded" IsEnabled="False" BorderBrush="#FFABD3FD" Foreground="#FF23578D">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFAED3F9" Offset="0"/>
