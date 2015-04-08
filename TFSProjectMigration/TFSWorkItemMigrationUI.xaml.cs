@@ -26,6 +26,7 @@ using System.Xml;
 using log4net.Config;
 using log4net;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace TFSProjectMigration
 {
@@ -502,7 +503,8 @@ namespace TFSProjectMigration
 
 		private string CanonicolizeIterationPath(string p)
 		{
-			return p.Trim(new[] {'\\'}).Replace("\\Iteration", "");
+            var regex = new Regex(@"\\Iteration");
+            return regex.Replace(p.Trim(new[] { '\\' }), "", 1);
 		}
 
 		private string CanonicolizeAreaPath(string p)
